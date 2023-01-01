@@ -1,4 +1,4 @@
-# KubeStack
+# Motionify
 <p align="center">
   <img width="500" height="500" src="https://user-images.githubusercontent.com/38230596/209870404-3f75b3c8-1704-4a1b-8810-ebd809036e54.png">
 </p>
@@ -8,7 +8,7 @@
   <a href="https://twitter.com/kubessandra" target="_blank"><img src="https://img.shields.io/twitter/follow/kubessandra?style=social" /></a>
 </p>
 
-# What's KubeStack
+# What's Motionify
 
 An amazing SaaS plateform boilerplate.
 

@@ -53,9 +53,9 @@ If a pull request is not ready to be reviewed yet
 
 ```bash
 # First you clone the original repository
-git clone git@github.com:kubessandra/KubeStack.git
+git clone git@github.com:kubessandra/Motionify.git
 # Next you add a git remote that is your fork:
-git remote add fork git@github.com:<YOUR-GITHUB-USERNAME-HERE>/KubeStack.git
+git remote add fork git@github.com:<YOUR-GITHUB-USERNAME-HERE>/Motionify.git
 # Next you fetch the latest changes from origin for master:
 git fetch origin
 git checkout main
@@ -95,7 +95,7 @@ If you enter the wrong version, or if the required node version changes, pnpm wi
 
 ### Ory CLI
 
-For authentication, the [KubeStack](https://github.com/Kubessandra/KubeStack) uses [Ory](https://www.ory.sh/docs/welcome).
+For authentication, the [Motionify](https://github.com/Kubessandra/Motionify) uses [Ory](https://www.ory.sh/docs/welcome).
 
 In order to be run locally, Ory relies on it's CLI to create a proxy tunnel to the API.
 
