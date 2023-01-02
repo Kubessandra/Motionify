@@ -1,7 +1,7 @@
 {
-  "name": "socialgenerator",
+  "name": "motionify",
   "version": "1.0.0",
-  "description": "generate social videos ",
+  "description": "generate social videos",
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {

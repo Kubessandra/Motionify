@@ -23,6 +23,7 @@ module.exports = getConfig({
    * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`
    * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration
    */
+  transpilePackages: ["@kubessandra/remotion"],
   publicRuntimeConfig: {
     NODE_ENV: env.NODE_ENV,
   },
