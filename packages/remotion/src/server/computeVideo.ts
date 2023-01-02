@@ -36,6 +36,10 @@ export const computeVideo = async (
     serveUrl,
     composition: videoId,
     codec: "h264",
+    downloadBehavior: {
+      type: "download",
+      fileName: null,
+    },
     imageFormat: "jpeg",
     maxRetries: 1,
     framesPerLambda: 20,
