@@ -3,7 +3,8 @@
   "scripts": {
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "clean": "rm -rf node_modules"
   },
   "devDependencies": {
     "prisma": "^4.8.0"

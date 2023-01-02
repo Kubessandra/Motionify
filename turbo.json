@@ -24,6 +24,10 @@
     "lint-fix": {
       "outputs": []
     },
+    "clean": {
+      "outputs": [],
+      "cache": false
+    },
     "db:generate": {
       "cache": false
     },

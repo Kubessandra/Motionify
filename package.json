@@ -11,6 +11,7 @@
     "turbo": "^1.6.3"
   },
   "scripts": {
+    "clean": "turbo run clean && rm -rf node_modules",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",

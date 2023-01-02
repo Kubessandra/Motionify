@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "@remotion/eslint-plugin"
+  ],
+  "extends": [
+    "@kubessandra/eslint-config-custom"
+  ]
+}

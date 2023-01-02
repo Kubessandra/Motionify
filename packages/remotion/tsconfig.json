@@ -1,0 +1,9 @@
+{
+  "extends": "@kubessandra/tsconfig/base",
+  "compilerOptions": {
+    "outDir": "./build",
+    "jsx": "preserve",
+    "types": []
+  },
+  "include": ["./src/lib.ts"]
+}

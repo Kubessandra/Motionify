@@ -4,10 +4,12 @@
 import { publicProcedure, router } from "../trpc";
 import { postRouter } from "./post";
 import { paymentRouter } from "./payment";
+import { videoRouter } from "./video";
 
 export const appRouter = router({
   healthcheck: publicProcedure.query(() => "yay!"),
   payment: paymentRouter,
+  video: videoRouter,
   post: postRouter,
 });
 

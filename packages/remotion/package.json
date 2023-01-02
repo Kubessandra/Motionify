@@ -1,0 +1,41 @@
+{
+  "name": "@kubessandra/remotion",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./src/lib.ts",
+  "scripts": {
+    "clean": "rm -rf ./node_modules",
+    "start": "remotion preview",
+    "build:video": "remotion render Welcome out/video.mp4",
+    "upload:site": "remotion lambda sites create src/index.ts --site-name=remotion",
+    "upgrade": "remotion upgrade",
+    "test": "eslint src --ext ts,tsx,js,jsx && tsc"
+  },
+  "repository": {},
+  "license": "GPL",
+  "devDependencies": {
+    "@kubessandra/eslint-config-custom": "workspace:*",
+    "@kubessandra/prettier-config": "workspace:*",
+    "@kubessandra/tsconfig": "workspace:*",
+    "@remotion/eslint-config": "^3.0.0",
+    "@types/react": "^18.0.26",
+    "@types/web": "^0.0.86",
+    "eslint": "^8.30.0",
+    "prettier": "^2.8.1",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@remotion/cli": "3.3.25",
+    "@remotion/eslint-plugin": "3.3.25",
+    "@remotion/lambda": "3.3.25",
+    "@remotion/player": "3.3.25",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remotion": "3.3.25"
+  },
+  "packageManager": "pnpm@7.21.0"
+}

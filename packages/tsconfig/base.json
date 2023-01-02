@@ -3,6 +3,7 @@
   "display": "Default",
   "compilerOptions": {
     "composite": false,
+    "jsx": "preserve",
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
