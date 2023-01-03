@@ -5,10 +5,12 @@ importers:
   .:
     specifiers:
       pnpm: ^7.21.0
+      rimraf: ^3.0.2
       turbo: ^1.6.3
     dependencies:
       pnpm: 7.21.0
     devDependencies:
+      rimraf: 3.0.2
       turbo: 1.6.3
 
   apps/web:
@@ -42,9 +44,10 @@ importers:
       next: ^13.1.1
       npm-run-all: ^4.1.5
       postcss: ^8.4.20
-      prettier: ^2.8.1
+      prettier: ^2.7.1
       react: ^18.2.0
       react-dom: ^18.2.0
+      rimraf: ^3.0.2
       stripe: ^11.5.0
       superjson: ^1.12.1
       tailwindcss: ^3.2.4
@@ -88,6 +91,7 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.20
       prettier: 2.8.1
+      rimraf: 3.0.2
       tailwindcss: 3.2.4_postcss@8.4.20
       tsx: 3.12.1
       typescript: 4.9.4
@@ -96,10 +100,12 @@ importers:
     specifiers:
       '@prisma/client': ^4.8.0
       prisma: ^4.8.0
+      rimraf: ^3.0.2
     dependencies:
       '@prisma/client': 4.8.0_prisma@4.8.0
     devDependencies:
       prisma: 4.8.0
+      rimraf: 3.0.2
 
   packages/eslint-config-custom:
     specifiers:
@@ -112,6 +118,7 @@ importers:
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-react: ^7.31.11
       eslint-plugin-react-hooks: ^4.6.0
+      rimraf: ^3.0.2
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
       '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
@@ -122,14 +129,18 @@ importers:
       eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
       eslint-plugin-react: 7.31.11_eslint@8.30.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.30.0
+    devDependencies:
+      rimraf: 3.0.2
 
   packages/prettier-config:
     specifiers:
       prettier: ^2.8.1
       prettier-plugin-tailwindcss: ^0.2.1
+      rimraf: ^3.0.2
     devDependencies:
       prettier: 2.8.1
       prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
+      rimraf: 3.0.2
 
   packages/remotion:
     specifiers:
@@ -148,6 +159,7 @@ importers:
       react: ^18.0.0
       react-dom: ^18.0.0
       remotion: 3.3.25
+      rimraf: ^3.0.2
       style-loader: ^3.3.1
       typescript: ^4.9.4
     dependencies:
@@ -167,6 +179,7 @@ importers:
       '@types/web': 0.0.86
       eslint: 8.30.0
       prettier: 2.8.1
+      rimraf: 3.0.2
       style-loader: 3.3.1_webpack@5.75.0
       typescript: 4.9.4
 
@@ -2006,7 +2019,7 @@ packages:
       react-refresh: 0.9.0
       remotion: 3.3.25_biqbaboplfbrettd7655fr4n2y
       style-loader: 2.0.0_webpack@5.74.0
-      webpack: 5.74.0
+      webpack: 5.74.0_esbuild@0.16.12
     transitivePeerDependencies:
       - '@swc/core'
       - uglify-js
@@ -3236,7 +3249,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
       semver: 7.3.8
-      webpack: 5.74.0
+      webpack: 5.74.0_esbuild@0.16.12
     dev: false
 
   /cssesc/3.0.0:
@@ -6036,7 +6049,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.74.0
+      webpack: 5.74.0_esbuild@0.16.12
     dev: false
 
   /style-loader/3.3.1_webpack@5.75.0:
@@ -6141,7 +6154,7 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  /terser-webpack-plugin/5.3.6_webpack@5.74.0:
+  /terser-webpack-plugin/5.3.6_a7bsei4app5fvzhcyjgautqju4:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -6158,11 +6171,12 @@ packages:
         optional: true
     dependencies:
       '@jridgewell/trace-mapping': 0.3.17
+      esbuild: 0.16.12
       jest-worker: 27.5.1
       schema-utils: 3.1.1
       serialize-javascript: 6.0.0
       terser: 5.16.1
-      webpack: 5.74.0
+      webpack: 5.74.0_esbuild@0.16.12
     dev: false
 
   /terser-webpack-plugin/5.3.6_webpack@5.75.0:
@@ -6450,7 +6464,7 @@ packages:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
 
-  /webpack/5.74.0:
+  /webpack/5.74.0_esbuild@0.16.12:
     resolution: {integrity: sha512-A2InDwnhhGN4LYctJj6M1JEaGL7Luj6LOmyBHjcI8529cm5p6VXiTIW2sn6ffvEAKmveLzvu4jrihwXtPojlAA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -6481,7 +6495,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.6_webpack@5.74.0
+      terser-webpack-plugin: 5.3.6_a7bsei4app5fvzhcyjgautqju4
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
