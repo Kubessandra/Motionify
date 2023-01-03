@@ -8,10 +8,11 @@
     "pnpm": "^7.19.0"
   },
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "turbo": "^1.6.3"
   },
   "scripts": {
-    "clean": "turbo run clean && rm -rf node_modules",
+    "clean": "turbo run clean && rimraf node_modules",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
