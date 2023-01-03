@@ -8,14 +8,14 @@ export const videoRouter = router({
   computeVideo: authProcedure
     .input(
       z.object({
-        videoId: z.string().max(250),
+        templateId: z.string().max(250),
         inputProps: z.record(z.any()),
       })
     )
     .mutation(async ({ input }) => {
-      const { videoId, inputProps } = input;
+      const { templateId, inputProps } = input;
       const outputUrl = await computeVideo({
-        videoId,
+        templateId,
         inputProps: inputProps,
       });
       return outputUrl;

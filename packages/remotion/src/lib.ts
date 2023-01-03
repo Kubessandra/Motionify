@@ -1,4 +1,4 @@
 import RemotionPlayer from "./RemotionPlayer";
 
-export { Welcome } from "./videos/Welcome";
+export * as templates from "./templates";
 export { RemotionPlayer };
