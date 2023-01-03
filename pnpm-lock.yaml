@@ -5,10 +5,12 @@ importers:
   .:
     specifiers:
       pnpm: ^7.19.0
+      rimraf: ^3.0.2
       turbo: ^1.6.3
     dependencies:
       pnpm: 7.19.0
     devDependencies:
+      rimraf: 3.0.2
       turbo: 1.6.3
 
   apps/web:
@@ -47,6 +49,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       remotion: 3.3.25
+      rimraf: ^3.0.2
       stripe: ^11.5.0
       superjson: ^1.7.4
       tailwindcss: ^3.2.4
@@ -92,6 +95,7 @@ importers:
       npm-run-all: 4.1.5
       postcss: 8.4.20
       prettier: 2.8.1
+      rimraf: 3.0.2
       tailwindcss: 3.2.4_postcss@8.4.20
       tsx: 3.12.1
       typescript: 4.9.4
@@ -100,10 +104,12 @@ importers:
     specifiers:
       '@prisma/client': ^4.8.0
       prisma: ^4.8.0
+      rimraf: ^3.0.2
     dependencies:
       '@prisma/client': 4.8.0_prisma@4.8.0
     devDependencies:
       prisma: 4.8.0
+      rimraf: 3.0.2
 
   packages/eslint-config-custom:
     specifiers:
@@ -116,6 +122,7 @@ importers:
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-react: ^7.31.11
       eslint-plugin-react-hooks: ^4.6.0
+      rimraf: ^3.0.2
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
       '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
@@ -126,14 +133,18 @@ importers:
       eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
       eslint-plugin-react: 7.31.11_eslint@8.30.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.30.0
+    devDependencies:
+      rimraf: 3.0.2
 
   packages/prettier-config:
     specifiers:
       prettier: ^2.8.1
       prettier-plugin-tailwindcss: ^0.2.1
+      rimraf: ^3.0.2
     devDependencies:
       prettier: 2.8.1
       prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
+      rimraf: 3.0.2
 
   packages/remotion:
     specifiers:
@@ -152,6 +163,7 @@ importers:
       react: ^18.0.0
       react-dom: ^18.0.0
       remotion: 3.3.25
+      rimraf: ^3.0.2
       style-loader: ^3.3.1
       typescript: ^4.9.4
     dependencies:
@@ -171,6 +183,7 @@ importers:
       '@types/web': 0.0.86
       eslint: 8.30.0
       prettier: 2.8.1
+      rimraf: 3.0.2
       style-loader: 3.3.1_webpack@5.75.0
       typescript: 4.9.4
 

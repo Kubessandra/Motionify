@@ -7,7 +7,7 @@
   ],
   "main": "./src/lib.ts",
   "scripts": {
-    "clean": "rm -rf ./node_modules",
+    "clean": "rimraf ./node_modules",
     "start": "remotion preview",
     "build:video": "remotion render Welcome out/video.mp4",
     "upload:site": "remotion lambda sites create src/index.ts --site-name=remotion",
@@ -25,6 +25,7 @@
     "@types/web": "^0.0.86",
     "eslint": "^8.30.0",
     "prettier": "^2.8.1",
+    "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "typescript": "^4.9.4"
   },
