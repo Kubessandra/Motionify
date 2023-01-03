@@ -2,7 +2,7 @@ import {
   getFunctions,
   renderMediaOnLambda,
   getRenderProgress,
-} from "@remotion/lambda";
+} from "@remotion/lambda/client";
 
 const serveUrl =
   "https://remotionlambda-useast1-lzq62ife7f.s3.us-east-1.amazonaws.com/sites/remotion/index.html";
