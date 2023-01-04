@@ -1,6 +1,5 @@
-# Motionify
 <p align="center">
-  <img width="500" height="500" src="https://user-images.githubusercontent.com/38230596/209870404-3f75b3c8-1704-4a1b-8810-ebd809036e54.png">
+  <img width="500" height="500" src="https://user-images.githubusercontent.com/38230596/210653041-fbc55b73-b3be-45f4-b0b0-bf33ef746d46.png">
 </p>
 
 <p align="center">
