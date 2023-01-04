@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import Layout from "~/components/Layout";
 import { useSession } from "~/hooks/useSession";
-import VideoListing from "~/components/VideoListing";
+import { TemplateListing } from "~/components/templates/TemplateListing";
 
 const Dashboard = () => {
   const session = useSession(true);
@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold my-8">Welcome to the dashboard</h1>
-      <VideoListing />
+      <TemplateListing />
     </div>
   );
 };
