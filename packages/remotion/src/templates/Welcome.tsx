@@ -9,10 +9,11 @@ import {
 
 interface WelcomeProps {
   name: string;
+  color: string;
 }
 
 export const Welcome = (props: WelcomeProps) => {
-  const { name } = props;
+  const { name, color } = props;
   const { height } = useVideoConfig();
   const frame = useCurrentFrame();
 
@@ -44,6 +45,7 @@ export const Welcome = (props: WelcomeProps) => {
             fontSize: 126,
             textAlign: "center",
             fontWeight: "bold",
+            color,
           }}
         >
           {name}
@@ -53,4 +55,4 @@ export const Welcome = (props: WelcomeProps) => {
   );
 };
 
-Welcome.videoId = "Welcome";
+Welcome.templateId = "Welcome";

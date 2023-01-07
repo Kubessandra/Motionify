@@ -9,7 +9,7 @@ const serveUrl =
 
 interface RenderVideoProps {
   inputProps: object;
-  videoId: string;
+  templateId: string;
 }
 
 let functionName: string | null | undefined = null;
@@ -28,13 +28,13 @@ const getFunctionName = async () => {
 export const computeVideo = async (
   props: RenderVideoProps
 ): Promise<string> => {
-  const { inputProps, videoId } = props;
+  const { inputProps, templateId } = props;
   const { renderId, bucketName } = await renderMediaOnLambda({
     region: "us-east-1",
     functionName: await getFunctionName(),
     inputProps,
     serveUrl,
-    composition: videoId,
+    composition: templateId,
     codec: "h264",
     downloadBehavior: {
       type: "download",

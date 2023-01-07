@@ -9,7 +9,13 @@ export const Logo = (props: LogoProps) => {
   return (
     <>
       <span className="sr-only">Motionify</span>
-      <Image height={size} width={size} src="/kubestack.png" alt="Logo" />
+      <Image
+        className="m-2"
+        height={size}
+        width={size}
+        src="/logo.png"
+        alt="Logo"
+      />
     </>
   );
 };
