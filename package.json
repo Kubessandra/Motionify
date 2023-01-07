@@ -8,6 +8,9 @@
     "pnpm": "^7.21.0"
   },
   "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-turbo": "^0.0.7",
+    "eslint-plugin-turbo": "^0.0.7",
     "rimraf": "^3.0.2",
     "turbo": "^1.6.3"
   },

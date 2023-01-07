@@ -19,7 +19,7 @@ const getFunctionName = async () => {
       region: "us-east-1",
       compatibleOnly: true,
     }).catch((e) => console.error(e));
-    functionName = functions?.[0].functionName;
+    functionName = functions?.[0]?.functionName;
     if (!functionName) throw new Error("No function name");
   }
   return functionName;

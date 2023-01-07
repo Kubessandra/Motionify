@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
-    "composite": false,
     "jsx": "preserve",
+    "composite": false,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,

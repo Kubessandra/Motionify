@@ -34,5 +34,11 @@
     "db:push": {
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "VERCEL_URL",
+    "PORT",
+    "RENDER_INTERNAL_HOSTNAME",
+    "NODE_ENV"
+  ]
 }
