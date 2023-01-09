@@ -1,17 +1,19 @@
 import { templates } from "@kubessandra/remotion";
 
 export const previews = [
-  {
-    id: "1",
-    name: "WelcomeTemplateDefault",
-    template: templates.Welcome,
-    color: "#111827",
-  },
+  // {
+  //   id: "1",
+  //   name: "WelcomeTemplateDefault",
+  //   template: templates.Welcome,
+  // },
   {
     id: "2",
-    templateId: "Welcome",
-    template: templates.Welcome,
-    name: "WelcomeTemplateBrass",
-    color: "#FDE68A",
+    template: templates.Github,
+    name: "New Awesome GITHUB TEMPLATE",
+  },
+  {
+    id: "3",
+    template: templates.Github,
+    name: "New Awesome GITHUB TEMPLATE",
   },
 ] as const;

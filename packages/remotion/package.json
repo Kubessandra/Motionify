@@ -8,7 +8,7 @@
   "main": "./src/lib.ts",
   "scripts": {
     "clean": "rimraf ./node_modules",
-    "start": "remotion preview",
+    "dev": "remotion preview --port 3001",
     "build:video": "remotion render Welcome out/video.mp4",
     "upload:site": "remotion lambda sites create src/index.ts --site-name=remotion",
     "upgrade": "remotion upgrade",
@@ -20,23 +20,23 @@
     "@kubessandra/eslint-config-custom": "workspace:*",
     "@kubessandra/prettier-config": "workspace:*",
     "@kubessandra/tsconfig": "workspace:*",
-    "@remotion/eslint-config": "^3.0.0",
+    "@remotion/cli": "3.3.27",
+    "@remotion/eslint-config": "^3.3.27",
     "@types/react": "^18.0.26",
     "@types/web": "^0.0.86",
-    "eslint": "^8.30.0",
-    "prettier": "^2.8.1",
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.2",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@remotion/cli": "3.3.25",
-    "@remotion/eslint-plugin": "3.3.25",
-    "@remotion/lambda": "3.3.25",
-    "@remotion/player": "3.3.25",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "remotion": "3.3.25"
+    "@remotion/eslint-plugin": "3.3.27",
+    "@remotion/lambda": "3.3.27",
+    "@remotion/player": "3.3.27",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "3.3.27"
   },
   "packageManager": "pnpm@7.21.0"
 }

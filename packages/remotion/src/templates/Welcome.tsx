@@ -6,6 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { DEFAULT_FPS } from "../constants";
 
 interface WelcomeProps {
   name: string;
@@ -13,14 +14,14 @@ interface WelcomeProps {
 }
 
 export const Welcome = (props: WelcomeProps) => {
-  const { name, color } = props;
+  const { name = "test", color = "black" } = props;
   const { height } = useVideoConfig();
   const frame = useCurrentFrame();
 
   const spr = spring({
     frame,
-    fps: 30,
-    durationInFrames: 60,
+    fps: DEFAULT_FPS,
+    durationInFrames: 2 * DEFAULT_FPS,
   });
 
   const offset = interpolate(spr, [0, 1], [-50, height / 2]);

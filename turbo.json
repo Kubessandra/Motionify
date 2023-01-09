@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": [".next/**"]
+      "outputs": [".next/**", "build/**"]
     },
     "dev": {
       "dependsOn": ["^db:generate"],

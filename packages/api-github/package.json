@@ -1,0 +1,22 @@
+{
+  "name": "@kubessandra/api-github",
+  "version": "1.0.0",
+  "description": "data fetcher for github",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "clean": "rimraf ./node_modules ./build",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kubessandra",
+  "license": "GPL",
+  "devDependencies": {
+    "@kubessandra/eslint-config-custom": "workspace:*",
+    "@kubessandra/tsconfig": "workspace:*",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.4"
+  }
+}

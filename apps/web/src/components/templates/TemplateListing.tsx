@@ -9,13 +9,10 @@ export const TemplateListing = () => {
   const session = useSession(false);
   const computeVideoMutation = trpc.video.computeVideo.useMutation();
 
-  const download = async (templateId: string, name: string, color: string) => {
+  const download = async (templateId: string) => {
     const videoUrl = await computeVideoMutation.mutateAsync({
       templateId: templateId,
-      inputProps: {
-        name,
-        color,
-      },
+      inputProps: {},
     });
     saveAs(videoUrl, `${templateId}.mp4`);
   };
@@ -45,7 +42,6 @@ export const TemplateListing = () => {
                     onDownloadClick={download}
                     loading={computeVideoMutation.isLoading}
                     preview={preview}
-                    name={session.email}
                   />
                 </li>
               ))}
