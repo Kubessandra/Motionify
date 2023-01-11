@@ -17,7 +17,6 @@ const Template: ComponentStory<typeof TemplatePreview> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   preview: previews[0],
-  name: "test",
   onDownloadClick: () => undefined,
   loading: false,
 };
@@ -25,7 +24,6 @@ Primary.args = {
 export const Loading = Template.bind({});
 Loading.args = {
   preview: previews[0],
-  name: "isLoading",
   onDownloadClick: () => undefined,
   loading: true,
 };

@@ -1,8 +1,7 @@
 {
   "extends": "@kubessandra/tsconfig/base",
   "compilerOptions": {
-    "outDir": "./build",
-    "types": []
+    "outDir": "./build"
   },
   "include": ["./src/**/*"]
 }

@@ -20,7 +20,9 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "lint-fix": "turbo run lint-fix",
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "api-github": "pnpm --filter api-github",
+    "remotion": "pnpm --filter remotion"
   },
   "repository": {
     "type": "git",

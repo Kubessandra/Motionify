@@ -6,22 +6,18 @@ import { previews } from "./data";
 interface PreviewTemplateProps {
   preview: typeof previews[number];
   loading: boolean;
-  onDownloadClick: (templateId: string, name: string, color: string) => void;
-  name: string;
+  onDownloadClick: (templateId: string) => void;
 }
 
 export const TemplatePreview = (props: PreviewTemplateProps) => {
-  const { preview, name, onDownloadClick, loading } = props;
+  const { preview, onDownloadClick, loading } = props;
+
   return (
     <>
       <div className="relative">
         <div className="aspect-video w-full overflow-hidden rounded-md bg-gray-200">
           <RemotionPlayer
             style={{ width: "100%" }}
-            inputProps={{
-              name,
-              color: preview.color,
-            }}
             component={preview.template}
             durationInFrames={120}
             fps={30}
@@ -32,9 +28,7 @@ export const TemplatePreview = (props: PreviewTemplateProps) => {
         </div>
         <button
           disabled={loading}
-          onClick={() =>
-            onDownloadClick(preview.template.templateId, name, preview.color)
-          }
+          onClick={() => onDownloadClick(preview.template.templateId)}
           className="absolute right-2 top-2  bg-gray-200 rounded-xl p-2 disabled:cursor-progress"
         >
           {loading ? (
@@ -44,7 +38,6 @@ export const TemplatePreview = (props: PreviewTemplateProps) => {
           )}
         </button>
         <div className="mt-6">
-          <p className="text-sm text-gray-500">{preview.color}</p>
           <h3 className="mt-1 font-semibold text-gray-900">
             <h2>{preview.name}</h2>
           </h3>
