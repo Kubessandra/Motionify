@@ -13,8 +13,7 @@
     "lint": "eslint ./src",
     "lint-fix": "pnpm lint --fix",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s ./public",
-    "test": "test"
+    "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
