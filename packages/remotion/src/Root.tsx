@@ -23,7 +23,7 @@ export const RemotionRoot: React.FC = () => {
         component={Github}
         defaultProps={{
           commitNumber: 30,
-          timing: "week",
+          timing: "month",
         }}
         durationInFrames={6 * DEFAULT_FPS}
         fps={DEFAULT_FPS}

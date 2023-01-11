@@ -13,7 +13,7 @@
     "preview": "remotion preview --port 3001",
     "update:lambda": "remotion lambda functions deploy",
     "build:video": "remotion render Welcome out/video.mp4",
-    "upload:site": "remotion lambda sites create src/index.ts --site-name=remotion",
+    "update:site": "remotion lambda sites create src/index.ts --site-name=remotion",
     "upgrade": "remotion upgrade",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
   },
@@ -23,10 +23,10 @@
     "@kubessandra/eslint-config-custom": "workspace:*",
     "@kubessandra/prettier-config": "workspace:*",
     "@kubessandra/tsconfig": "workspace:*",
-    "@remotion/cli": "3.3.28",
-    "@remotion/eslint-config": "^3.3.28",
+    "@remotion/cli": "3.3.31",
+    "@remotion/eslint-config": "^3.3.31",
     "@types/react": "^18.0.26",
-    "@types/web": "^0.0.86",
+    "@types/web": "^0.0.87",
     "eslint": "^8.31.0",
     "prettier": "^2.8.2",
     "rimraf": "^3.0.2",
@@ -34,13 +34,14 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@remotion/eslint-plugin": "3.3.28",
-    "@remotion/lambda": "3.3.28",
-    "@remotion/player": "3.3.28",
+    "@remotion/eslint-plugin": "3.3.31",
+    "@remotion/google-fonts": "^3.3.31",
+    "@remotion/lambda": "3.3.31",
+    "@remotion/player": "3.3.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-shadow": "^20.0.0",
-    "remotion": "3.3.28"
+    "remotion": "3.3.31"
   },
   "packageManager": "pnpm@7.21.0"
 }

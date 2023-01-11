@@ -1,4 +1,4 @@
-import React from "react";
+import { loadFont } from "@remotion/google-fonts/Roboto";
 import {
   AbsoluteFill,
   Img,
@@ -16,6 +16,7 @@ interface GithubProps {
   commitNumber?: number;
   timing?: Timing;
 }
+const { fontFamily } = loadFont();
 
 const getTextTiming = (timing: Timing): string => {
   let text: string;
@@ -62,11 +63,12 @@ export const Github = (props: GithubProps) => {
       damping: 15,
     },
   });
-  const topOffset = interpolate(sprTiming, [0, 1], [height, 90]);
+  const topOffset = interpolate(sprTiming, [0, 1], [height, 150]);
 
   return (
     <AbsoluteFill
       style={{
+        fontFamily,
         zIndex: 0,
         backgroundColor: "white",
       }}
