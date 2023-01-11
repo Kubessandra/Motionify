@@ -1,7 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@kubessandra/tsconfig/base",
+  "display": "Default",
   "compilerOptions": {
     "outDir": "./build",
+    "jsx": "react-jsx",
     "types": []
   },
   "include": ["./src/**/*"]

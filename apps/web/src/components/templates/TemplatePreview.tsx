@@ -38,9 +38,7 @@ export const TemplatePreview = (props: PreviewTemplateProps) => {
           )}
         </button>
         <div className="mt-6">
-          <h3 className="mt-1 font-semibold text-gray-900">
-            <h2>{preview.name}</h2>
-          </h3>
+          <h3 className="mt-1 font-semibold text-gray-900">{preview.name}</h3>
         </div>
       </div>
     </>

@@ -76,7 +76,7 @@ export const Github = (props: GithubProps) => {
           zIndex: 2,
         }}
       >
-        <h1
+        <div
           style={{
             margin: 0,
             right: 120,
@@ -102,7 +102,7 @@ export const Github = (props: GithubProps) => {
           >
             commits
           </span>
-          <h2
+          <div
             style={{
               textAlign: "center",
               position: "absolute",
@@ -114,8 +114,8 @@ export const Github = (props: GithubProps) => {
             }}
           >
             {getTextTiming(timing)}
-          </h2>
-        </h1>
+          </div>
+        </div>
       </div>
       <Img
         style={{

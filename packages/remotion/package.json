@@ -5,10 +5,12 @@
   "sideEffects": [
     "*.css"
   ],
-  "main": "./src/lib.ts",
+  "main": "./build/lib.js",
   "scripts": {
     "clean": "rimraf ./node_modules",
-    "dev": "remotion preview --port 3001",
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "preview": "remotion preview --port 3001",
     "update:lambda": "remotion lambda functions deploy",
     "build:video": "remotion render Welcome out/video.mp4",
     "upload:site": "remotion lambda sites create src/index.ts --site-name=remotion",
@@ -37,6 +39,7 @@
     "@remotion/player": "3.3.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-shadow": "^20.0.0",
     "remotion": "3.3.28"
   },
   "packageManager": "pnpm@7.21.0"
