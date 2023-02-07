@@ -12,6 +12,8 @@ const { z } = require("zod");
 
 const envSchema = z.object({
   NEXT_ORY_SDK_URL: z.string(),
+  GITHUB_APP_ID: z.string(),
+  GITHUB_PRIVATE_KEY: z.string(),
   STRIPE_SECRET: z.string(),
   STRIPE_WEBHOOK_SECRET: z.string(),
   FRONT_URL: z.string(),

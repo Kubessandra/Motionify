@@ -7,8 +7,8 @@ const testData1 = {
     9, 4,
   ],
   owner: [
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 923, 0, 0, 0, 0, 0,
-    0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 10, 2, 3, 32, 23,
+    1, 0, 2, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 923, 0, 0, 0, 0,
+    0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 10, 2, 3, 32, 23,
     10, 23, 32, 4,
   ],
 };
@@ -21,4 +21,9 @@ test("numberOfCommit per month", () => {
 test("numberOfCommit per week", () => {
   const commitNumber = transfromGithubDataToTiming(testData1, "week");
   expect(commitNumber).toBe(4);
+});
+
+test("numberOfCommit per year", () => {
+  const commitNumber = transfromGithubDataToTiming(testData1, "year");
+  expect(commitNumber).toBe(1132);
 });

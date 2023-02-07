@@ -2,13 +2,13 @@
 import * as trpc from "@trpc/server";
 import * as trpcNext from "@trpc/server/adapters/next";
 import { getSession } from "./auth/ory";
-import { Session } from "./auth/types";
+import { ISession } from "./auth/types";
 import { prisma } from "./prisma";
 import { createPaymentAccount, createUser } from "./core/user";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface CreateContextOptions {
-  session: Session | null;
+  session: ISession | null;
 }
 
 /**

@@ -1,11 +1,16 @@
 import { Octokit } from "octokit";
 
+/*
+ ** Octokit use for authentication with appId
+ ** and private Key
+ */
+
 interface AuthCreds {
   appId: string;
   privateKey: string;
 }
 
-export const init = (authCreds: AuthCreds) => {
+export const initApp = (authCreds: AuthCreds) => {
   _authCreds = authCreds;
   _octokit = new Octokit({
     appId: _authCreds.appId,
@@ -20,7 +25,7 @@ export const getAuthCreds = () => {
 };
 
 let _octokit: Octokit;
-export const getOctokit = (): Octokit => {
+export const getAppOctokit = (): Octokit => {
   if (!_octokit) throw new Error("No octokit available");
   return _octokit;
 };

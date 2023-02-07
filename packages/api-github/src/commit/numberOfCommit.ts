@@ -1,11 +1,11 @@
-import { getOctokit } from "../init";
+import { getAppOctokit } from "../initApp";
 
-type Timing = "week" | "month";
+type Timing = "week" | "month" | "year";
 
 interface NumberOfCommitOpts {
   owner: string;
   repo: string;
-  timing: "week" | "month";
+  timing: Timing;
 }
 
 export const transfromGithubDataToTiming = (
@@ -22,16 +22,19 @@ export const transfromGithubDataToTiming = (
       const lastWeek = data.owner.slice(-1);
       commitNumber = lastWeek[0];
       break;
+    case "year":
+      commitNumber = data.owner.reduce((nb, current) => nb + current, 0);
+      break;
   }
   return commitNumber;
 };
 
-export const numberOfCommit = async ({
+export const getNumberOfCommit = async ({
   timing,
   owner,
   repo,
 }: NumberOfCommitOpts) => {
-  const octokit = getOctokit();
+  const octokit = getAppOctokit();
   const { data } = await octokit.request(
     "GET /repos/{owner}/{repo}/stats/participation",
     {
