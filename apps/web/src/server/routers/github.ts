@@ -28,10 +28,8 @@ export const githubRouter = router({
       return outputUrl;
     }),
 
-  user: authProcedure.query(async () => {
-    // const token = await ctx.session.getProviderAccessToken("github");
-    // const newToken = await refreshAccessToken(token);
-    const token = "COUCOU";
+  user: authProcedure.query(async ({ ctx }) => {
+    const token = await ctx.session.getProviderAccessToken("github");
     const user = await getUser(token);
     return user;
   }),

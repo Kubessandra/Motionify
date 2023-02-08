@@ -1,5 +1,4 @@
 import { Octokit } from "octokit";
-import { getAppOctokit } from "./initApp";
 
 interface GithubUser {
   id: number;
@@ -21,25 +20,4 @@ export const getUser = async (ghToken: string): Promise<GithubUser> => {
     company,
     name,
   };
-};
-
-interface RefreshTokenResponse {
-  access_token: string;
-  expires_in: string;
-  refresh_token: string;
-  refresh_token_expires_in: string;
-  scope: string;
-  token_type: string;
-}
-
-export const refreshAccessToken = async (
-  ghRefreshToken: string
-): Promise<string> => {
-  const octokit = getAppOctokit();
-  const response = await octokit.request("POST /login/oauth/access_token", {
-    refresh_token: ghRefreshToken,
-    grant_type: "refresh_token",
-  });
-  const tokenResponse = response.data as RefreshTokenResponse;
-  return tokenResponse.access_token;
 };

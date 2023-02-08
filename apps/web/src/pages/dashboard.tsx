@@ -1,13 +1,9 @@
-import { UserButton, useUser } from "@clerk/nextjs";
 import { ReactElement } from "react";
 import Layout from "~/components/Layout";
-import Loading from "~/components/Loading";
 import { TemplateListing } from "~/components/templates/TemplateListing";
 import { trpc } from "~/utils/trpc";
 
 const Dashboard = () => {
-  const { user, isLoaded } = useUser();
-
   const { data, isLoading } = trpc.github.user.useQuery();
 
   return (
