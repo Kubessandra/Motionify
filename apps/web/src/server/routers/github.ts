@@ -1,4 +1,4 @@
-import { getUser, refreshAccessToken, initApp } from "@kubessandra/api-github";
+import { getUser, initApp } from "@kubessandra/api-github";
 import { router } from "../trpc";
 import { computeVideo } from "@kubessandra/remotion/src/server/computeVideo";
 import { z } from "zod";
@@ -28,10 +28,10 @@ export const githubRouter = router({
       return outputUrl;
     }),
 
-  user: authProcedure.query(async ({ ctx }) => {
-    const token = await ctx.session.getProviderAccessToken("github");
-    console.log('TOK', token);
+  user: authProcedure.query(async () => {
+    // const token = await ctx.session.getProviderAccessToken("github");
     // const newToken = await refreshAccessToken(token);
+    const token = "COUCOU";
     const user = await getUser(token);
     return user;
   }),

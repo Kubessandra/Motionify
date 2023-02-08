@@ -6,7 +6,6 @@
     "dev": "run-p next:dev stripe:dev",
     "stripe:dev": "stripe listen --forward-to localhost:3000/api/webhook/stripe",
     "next:dev": "next dev",
-    "ory:proxy": "node ./scripts/oryProxy.mjs",
     "build": "next build",
     "clean": "rimraf ./node_modules && rimraf ./.next",
     "start": "next start",

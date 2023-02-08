@@ -4,7 +4,7 @@ import { BoltIcon } from "@heroicons/react/20/solid";
 import { previews } from "./data";
 
 interface PreviewTemplateProps {
-  preview: typeof previews[number];
+  preview: (typeof previews)[number];
   loading: boolean;
   onDownloadClick: (templateId: string) => void;
 }

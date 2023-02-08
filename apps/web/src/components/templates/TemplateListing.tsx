@@ -1,12 +1,12 @@
-import { useSession } from "~/hooks/useSession";
 import Loading from "../Loading";
 import { TemplatePreview } from "./TemplatePreview";
 import { previews } from "./data";
 import { trpc } from "~/utils/trpc";
 import saveAs from "file-saver";
+import { useAuth } from "@clerk/nextjs";
 
 export const TemplateListing = () => {
-  const session = useSession(false);
+  const { isLoaded, userId } = useAuth();
   const computeVideoMutation = trpc.video.computeVideo.useMutation();
 
   const download = async (templateId: string) => {
@@ -16,7 +16,7 @@ export const TemplateListing = () => {
     });
     saveAs(videoUrl, `${templateId}.mp4`);
   };
-  if (!session) return <Loading />;
+  if (!isLoaded || !userId) return <Loading />;
 
   return (
     <div className="bg-white">
