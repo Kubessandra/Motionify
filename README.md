@@ -9,7 +9,7 @@
 
 # What's Motionify
 
-An amazing SaaS plateform boilerplate.
+An amazing SaaS plateform to generate videos from your data.
 
 ## Run it in local
 
