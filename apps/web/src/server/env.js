@@ -11,11 +11,14 @@ const { z } = require("zod");
  */
 
 const envSchema = z.object({
-  NEXT_ORY_SDK_URL: z.string(),
+  GITHUB_APP_ID: z.string(),
+  GITHUB_PRIVATE_KEY: z.string(),
   STRIPE_SECRET: z.string(),
   STRIPE_WEBHOOK_SECRET: z.string(),
   FRONT_URL: z.string(),
   NODE_ENV: z.enum(["development", "test", "production"]),
+  CLERK_SECRET_KEY: z.string(),
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string(),
 });
 
 const env = envSchema.safeParse(process.env);

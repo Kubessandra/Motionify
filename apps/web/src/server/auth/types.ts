@@ -1,9 +1,7 @@
-export interface Session {
+export type ProviderType = "github" | "google"
+
+export interface ISession {
   externalId: string;
   email: string;
+  getProviderAccessToken: (provider: ProviderType) => Promise<string>;
 }
-
-export type GetSessionFunc = (params: {
-  authorization: string;
-  cookies: Record<string, string | undefined>;
-}) => Promise<Session | null>;

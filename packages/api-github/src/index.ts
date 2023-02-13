@@ -1,3 +1,2 @@
-console.log("HELLO");
-
-export const lol = "";
+export * from "./commit/numberOfCommit";
+export * from "./user";

@@ -11,8 +11,8 @@
     "eslint": "^8.31.0",
     "eslint-config-turbo": "^0.0.7",
     "eslint-plugin-turbo": "^0.0.7",
-    "rimraf": "^4.1.2",
-    "turbo": "^1.7.0"
+    "turbo": "^1.7.4",
+    "rimraf": "^4.1.2"
   },
   "scripts": {
     "clean": "turbo run clean && rimraf node_modules",

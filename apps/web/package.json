@@ -3,23 +3,23 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "dev": "run-p next:dev ory:proxy",
+    "dev": "run-p next:dev stripe:dev",
     "stripe:dev": "stripe listen --forward-to localhost:3000/api/webhook/stripe",
     "next:dev": "next dev",
-    "ory:proxy": "node ./scripts/oryProxy.mjs",
     "build": "next build",
     "clean": "rimraf ./node_modules && rimraf ./.next",
     "start": "next start",
     "lint": "eslint ./src",
     "lint-fix": "pnpm lint --fix",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s ./public",
-    "test": "test"
+    "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.9.1",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@kubessandra/database": "workspace:*",
+    "@kubessandra/api-github": "workspace:*",
     "@kubessandra/remotion": "workspace:*",
     "@ory/client": "^1.1.4",
     "@ory/integrations": "^1.1.0",

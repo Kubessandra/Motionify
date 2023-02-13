@@ -4,19 +4,21 @@ import { BoltIcon } from "@heroicons/react/20/solid";
 import { previews } from "./data";
 
 interface PreviewTemplateProps {
-  preview: typeof previews[number];
+  preview: (typeof previews)[number];
   loading: boolean;
   onDownloadClick: (templateId: string) => void;
+  inputProps: Record<string, unknown>;
 }
 
 export const TemplatePreview = (props: PreviewTemplateProps) => {
-  const { preview, onDownloadClick, loading } = props;
+  const { preview, onDownloadClick, loading, inputProps } = props;
 
   return (
     <>
       <div className="relative">
         <div className="aspect-video w-full overflow-hidden rounded-md bg-gray-200">
           <RemotionPlayer
+            inputProps={inputProps}
             style={{ width: "100%" }}
             component={preview.template}
             durationInFrames={120}

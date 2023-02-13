@@ -1,7 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@kubessandra/tsconfig/base",
   "compilerOptions": {
-    "outDir": "./build"
+    "outDir": "./build",
+    "target": "ES2016"
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "build", "./src/**/*.test.ts"]
 }

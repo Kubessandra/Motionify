@@ -1,14 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as trpc from "@trpc/server";
 import * as trpcNext from "@trpc/server/adapters/next";
-import { getSession } from "./auth/ory";
-import { Session } from "./auth/types";
+import { ISession } from "./auth/types";
 import { prisma } from "./prisma";
 import { createPaymentAccount, createUser } from "./core/user";
+import { clerkClient, getAuth } from "@clerk/nextjs/server";
+import { getSession } from "./auth/getSession";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface CreateContextOptions {
-  session: Session | null;
+  session: ISession | null;
 }
 
 /**
@@ -44,14 +45,6 @@ export async function createContext(
   opts: trpcNext.CreateNextContextOptions
 ): Promise<Context> {
   // for API-response caching see https://trpc.io/docs/caching
-  let session = null;
-
-  const authHeader = opts.req.headers.authorization;
-  const { cookies } = opts.req;
-  session = await getSession({
-    authorization: authHeader ?? "",
-    cookies,
-  });
-
+  const session = await getSession(opts.req);
   return await createContextInner({ session });
 }

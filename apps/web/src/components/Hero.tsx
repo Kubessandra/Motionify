@@ -2,11 +2,10 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import { useSession } from "~/hooks/useSession";
 import { Logo } from "./Logo";
 import Link from "next/link";
-import auth from "~/utils/auth";
-import securedRoutes from "~/utils/routing";
+import securedRoutes, { publicRoutes } from "~/utils/routing";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -16,8 +15,6 @@ const navigation = [
 ];
 
 export default function Hero() {
-  const session = useSession(false);
-
   return (
     <div className="bg-gray-50">
       <div className="relative overflow-hidden">
@@ -121,21 +118,22 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
                   <span className="inline-flex rounded-md shadow">
-                    {!session ? (
+                    <SignedOut>
                       <Link
-                        href={auth.loginURL}
+                        href={publicRoutes.SIGN_IN.path}
                         className="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Log in
                       </Link>
-                    ) : (
+                    </SignedOut>
+                    <SignedIn>
                       <Link
                         href={securedRoutes.DASHBOARD.path}
                         className="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Dashboard
                       </Link>
-                    )}
+                    </SignedIn>
                   </span>
                 </div>
               </nav>
@@ -175,21 +173,22 @@ export default function Hero() {
                       </a>
                     ))}
                   </div>
-                  {!session ? (
+                  <SignedOut>
                     <Link
-                      href={auth.loginURL}
+                      href={publicRoutes.SIGN_IN.path}
                       className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100 hover:text-indigo-700"
                     >
                       Log in
                     </Link>
-                  ) : (
+                  </SignedOut>
+                  <SignedIn>
                     <Link
                       href={securedRoutes.DASHBOARD.path}
                       className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100 hover:text-indigo-700"
                     >
                       Dashboard
                     </Link>
-                  )}
+                  </SignedIn>
                 </div>
               </Popover.Panel>
             </Transition>
