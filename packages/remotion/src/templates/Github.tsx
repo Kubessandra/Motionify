@@ -10,7 +10,7 @@ import {
 import { DEFAULT_FPS } from "../constants";
 import { useCountUp } from "../hooks/useCountUp";
 
-type Timing = "day" | "week" | "month";
+type Timing = "year" | "week" | "month";
 
 interface GithubProps {
   commitNumber?: number;
@@ -21,14 +21,14 @@ const { fontFamily } = loadFont();
 const getTextTiming = (timing: Timing): string => {
   let text: string;
   switch (timing) {
-    case "day":
-      text = "Today";
-      break;
     case "week":
       text = "This week";
       break;
     case "month":
       text = "This month";
+      break;
+    case "year":
+      text = "This year";
       break;
   }
   return text;

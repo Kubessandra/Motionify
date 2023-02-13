@@ -1,31 +1,32 @@
-import { getUser, initApp } from "@kubessandra/api-github";
+import {
+  getNumberOfCommit,
+  getUser,
+  timingValues,
+} from "@kubessandra/api-github";
 import { router } from "../trpc";
-import { computeVideo } from "@kubessandra/remotion/src/server/computeVideo";
 import { z } from "zod";
 
 import { authProcedure } from "../auth/middleware";
-import { env } from "../env";
-
-initApp({
-  appId: env.GITHUB_APP_ID,
-  privateKey: env.GITHUB_PRIVATE_KEY,
-});
 
 export const githubRouter = router({
   numberOfCommit: authProcedure
     .input(
       z.object({
-        templateId: z.string().max(250),
-        inputProps: z.record(z.any()),
+        timing: z.enum(timingValues),
+        owner: z.string(),
+        repo: z.string(),
       })
     )
-    .mutation(async ({ input }) => {
-      const { templateId, inputProps } = input;
-      const outputUrl = await computeVideo({
-        templateId,
-        inputProps: inputProps,
+    .query(async ({ input, ctx }) => {
+      const timing = input.timing;
+      const ghToken = await ctx.session.getProviderAccessToken("github");
+      const nbCommits = await getNumberOfCommit({
+        token: ghToken,
+        owner: "Kubessandra",
+        repo: "Motionify",
+        timing,
       });
-      return outputUrl;
+      return nbCommits;
     }),
 
   user: authProcedure.query(async ({ ctx }) => {

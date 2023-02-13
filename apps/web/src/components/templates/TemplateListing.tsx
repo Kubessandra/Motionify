@@ -39,6 +39,7 @@ export const TemplateListing = () => {
                   className="inline-flex w-96 flex-col text-center lg:w-auto"
                 >
                   <TemplatePreview
+                    inputProps={{}}
                     onDownloadClick={download}
                     loading={computeVideoMutation.isLoading}
                     preview={preview}
