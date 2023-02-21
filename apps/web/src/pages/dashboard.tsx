@@ -10,13 +10,13 @@ const Dashboard = () => {
   const { data: nbCommits } = trpc.github.numberOfCommit.useQuery({
     repo: "Motionify",
     owner: "Kubessandra",
-    timing: "month",
+    timing: "year",
   });
 
   const computeVideoMutation = trpc.video.computeVideo.useMutation();
   const inputProps = {
     commitNumber: nbCommits,
-    timing: "month",
+    timing: "year",
   };
 
   const download = async (templateId: string) => {

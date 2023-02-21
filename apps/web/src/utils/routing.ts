@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-import { HomeIcon, CogIcon, CreditCardIcon } from "@heroicons/react/24/outline";
+import { HomeIcon, CogIcon, CreditCardIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
 export interface IRoute {
   path: string;
@@ -8,7 +8,6 @@ export interface IRoute {
   sidebar: boolean;
   icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 }
-
 type SecuredRoutes = typeof securedRoutes;
 const securedRoutes = {
   DASHBOARD: {
@@ -22,6 +21,12 @@ const securedRoutes = {
     name: "Plan",
     sidebar: true,
     icon: CreditCardIcon,
+  },
+  EDITOR: {
+    path: "/editor",
+    name: "Editor",
+    sidebar: true,
+    icon: PencilSquareIcon,
   },
   SETTINGS: {
     path: "/settings",

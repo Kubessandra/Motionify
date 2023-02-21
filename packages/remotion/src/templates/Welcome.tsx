@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AbsoluteFill,
   interpolate,
@@ -8,7 +7,7 @@ import {
 } from "remotion";
 import { DEFAULT_FPS } from "../constants";
 
-interface WelcomeProps {
+export interface WelcomeProps {
   name: string;
   color: string;
 }
@@ -56,4 +55,4 @@ export const Welcome = (props: WelcomeProps) => {
   );
 };
 
-Welcome.templateId = "Welcome";
+Welcome.templateId = "Welcome" as const;

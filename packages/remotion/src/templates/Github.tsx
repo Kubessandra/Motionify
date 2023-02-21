@@ -12,7 +12,7 @@ import { useCountUp } from "../hooks/useCountUp";
 
 type Timing = "year" | "week" | "month";
 
-interface GithubProps {
+export interface GithubProps {
   commitNumber?: number;
   timing?: Timing;
 }
@@ -136,4 +136,4 @@ export const Github = (props: GithubProps) => {
   );
 };
 
-Github.templateId = "Github";
+Github.templateId = "Github" as const;
