@@ -10,7 +10,7 @@
   "devDependencies": {
     "eslint": "^8.31.0",
     "eslint-config-turbo": "^0.0.7",
-    "eslint-plugin-turbo": "^0.0.7",
+    "eslint-plugin-turbo": "^1.9.2",
     "turbo": "^1.7.4",
     "rimraf": "^4.1.2"
   },
