@@ -1,8 +1,9 @@
-import { GithubRepository } from "@kubessandra/api-github";
+import { type GithubRepository } from "@kubessandra/api-github";
 import { RemotionPlayer, templates } from "@kubessandra/remotion";
 import { useEffect, useState } from "react";
 import { trpc } from "~/utils/trpc";
-import { RepoSelector, Repository } from "./RepoSelector";
+import { RepoSelector } from "./RepoSelector";
+import Loading from "~/components/Loading";
 
 interface RepoSelectorWithFetchProps {
   onChange: (data: GithubRepository) => void;
@@ -10,9 +11,14 @@ interface RepoSelectorWithFetchProps {
 
 export const RepoSelectorWithFetch = (props: RepoSelectorWithFetchProps) => {
   const { onChange } = props;
-  const { data: repos, isLoading } = trpc.github.listRepositories.useQuery();
+  const [query, setQuery] = useState("");
+  const { data: repos, isLoading } = trpc.github.listRepositories.useQuery({
+    search: query,
+  });
 
-  const [selectedRepo, setSelectedRepo] = useState<Repository | undefined>();
+  const [selectedRepo, setSelectedRepo] = useState<
+    GithubRepository | undefined
+  >();
 
   const firstRepo = repos?.[0];
   useEffect(() => {
@@ -24,7 +30,6 @@ export const RepoSelectorWithFetch = (props: RepoSelectorWithFetchProps) => {
     onChange(selectedRepo);
   }, [selectedRepo, onChange]);
 
-  if (isLoading) return <div>Loading...</div>;
   if (!repos) {
     return <div>No repos</div>;
   }
@@ -33,11 +38,13 @@ export const RepoSelectorWithFetch = (props: RepoSelectorWithFetchProps) => {
     <div>
       {selectedRepo && (
         <RepoSelector
+          onChangeQuery={setQuery}
           repos={repos}
           onChange={setSelectedRepo}
           selectedRepo={selectedRepo}
         />
       )}
+      {isLoading && <Loading />}
     </div>
   );
 };

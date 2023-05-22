@@ -2,14 +2,13 @@ import {
   getNumberOfCommit,
   getUser,
   getUserRepositories,
-  GithubRepository,
+  type GithubRepository,
   timingValues,
 } from "@kubessandra/api-github";
 import { router } from "../trpc";
 import { z } from "zod";
 
 import { authProcedure } from "../auth/middleware";
-import { Repository } from "~/components/templates/TemplateGithub/RepoSelector";
 
 export const githubRouter = router({
   numberOfCommit: authProcedure
@@ -31,13 +30,18 @@ export const githubRouter = router({
       });
       return nbCommits;
     }),
-  listRepositories: authProcedure.query(
-    async ({ ctx }): Promise<GithubRepository[]> => {
+  listRepositories: authProcedure
+    .input(
+      z.object({
+        search: z.string().optional(),
+      })
+    )
+    .query(async ({ ctx, input }): Promise<GithubRepository[]> => {
+      const { search } = input;
       const ghToken = await ctx.session.getProviderAccessToken("github");
-      const repos = await getUserRepositories(ghToken);
+      const repos = await getUserRepositories(ghToken, { search });
       return repos;
-    }
-  ),
+    }),
   user: authProcedure.query(async ({ ctx }) => {
     const token = await ctx.session.getProviderAccessToken("github");
     const user = await getUser(token);
