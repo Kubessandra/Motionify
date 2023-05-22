@@ -1,12 +1,11 @@
-import { SVGProps } from "react";
-
 import { HomeIcon, CogIcon, CreditCardIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
+type Icon = typeof HomeIcon;
 export interface IRoute {
   path: string;
   name: string;
   sidebar: boolean;
-  icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon?: Icon;
 }
 type SecuredRoutes = typeof securedRoutes;
 const securedRoutes = {

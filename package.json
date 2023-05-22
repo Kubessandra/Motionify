@@ -5,14 +5,14 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "pnpm": "^7.24.3"
+    "pnpm": "^8.5.1"
   },
   "devDependencies": {
-    "eslint": "^8.31.0",
-    "eslint-config-turbo": "^0.0.7",
-    "eslint-plugin-turbo": "^0.0.7",
-    "rimraf": "^4.1.2",
-    "turbo": "^1.8.1"
+    "eslint": "^8.41.0",
+    "eslint-config-turbo": "^1.9.8",
+    "eslint-plugin-turbo": "^1.9.8",
+    "rimraf": "^5.0.1",
+    "turbo": "^1.9.8"
   },
   "scripts": {
     "clean": "turbo run clean && rimraf node_modules",

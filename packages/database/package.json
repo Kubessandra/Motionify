@@ -7,10 +7,10 @@
     "clean": "rimraf node_modules"
   },
   "devDependencies": {
-    "prisma": "^4.10.0",
-    "rimraf": "^3.0.2"
+    "prisma": "^4.14.1",
+    "rimraf": "^5.0.1"
   },
   "dependencies": {
-    "@prisma/client": "^4.10.0"
+    "@prisma/client": "^4.14.1"
   }
 }

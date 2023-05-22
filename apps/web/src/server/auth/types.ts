@@ -1,4 +1,4 @@
-export type ProviderType = "github" | "google"
+export type ProviderType = "github" | "google";
 
 export interface ISession {
   externalId: string;
