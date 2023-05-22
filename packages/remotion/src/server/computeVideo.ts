@@ -29,6 +29,7 @@ export const computeVideo = async (
   props: RenderVideoProps
 ): Promise<string> => {
   const { inputProps, templateId } = props;
+  console.info("[ComputeVideo] Rendering video with props");
   const { renderId, bucketName } = await renderMediaOnLambda({
     region: "us-east-1",
     functionName: await getFunctionName(),
@@ -66,7 +67,7 @@ const waitForRenderingProcess = (renderId: string, bucketName: string) =>
         return resolve(progress.outputFile);
       }
       if (progress.fatalErrorEncountered) {
-        console.error("Error enountered", progress.errors);
+        console.error("[Rendering Process] fatal error", progress.errors);
         return rej(JSON.stringify(progress.errors));
       }
     }
