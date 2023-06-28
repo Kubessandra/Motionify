@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -48,8 +52,8 @@ importers:
         specifier: ^1.1.33
         version: 1.1.33
       '@ory/integrations':
-        specifier: ^1.1.0
-        version: 1.1.0(@ory/client@1.1.33)(next@13.4.3)
+        specifier: ^1.1.2
+        version: 1.1.2(@ory/client@1.1.33)(next@13.4.3)
       '@tanstack/react-query':
         specifier: ^4.29.7
         version: 4.29.7(react-dom@18.2.0)(react@18.2.0)
@@ -4249,10 +4253,10 @@ packages:
       - debug
     dev: false
 
-  /@ory/integrations@1.1.0(@ory/client@1.1.33)(next@13.4.3):
-    resolution: {integrity: sha512-1PQhpj2AGF2fX15IyftdMACeaBWSMzsOJgX3q5mJY76CzjJxfWPxnrX3Y0YaHcbCQsHw3NPcRPK0am3NCezumw==}
+  /@ory/integrations@1.1.2(@ory/client@1.1.33)(next@13.4.3):
+    resolution: {integrity: sha512-ZJ2SDrkyUNtTuet47aS8BaEMUjGVYvd632QyOcqdP6sOqCnIHVs0y0Kh6yb0T8iINMAPNkrQAW3jv1W8zbib+A==}
     peerDependencies:
-      '@ory/client': ^0.2.0-alpha.16
+      '@ory/client': 1.1.39
       next: '>=12.0.10'
     dependencies:
       '@ory/client': 1.1.33
@@ -7759,6 +7763,7 @@ packages:
 
   /bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -10030,6 +10035,7 @@ packages:
 
   /file-uri-to-path@1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -12653,6 +12659,7 @@ packages:
 
   /nan@2.17.0:
     resolution: {integrity: sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==}
+    requiresBuild: true
     dev: true
     optional: true
 
