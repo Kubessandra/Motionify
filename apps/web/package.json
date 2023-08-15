@@ -46,7 +46,7 @@
     "@babel/core": "^7.21.8",
     "@kubessandra/eslint-config-custom": "workspace:*",
     "@kubessandra/prettier-config": "workspace:*",
-    "@storybook/addon-actions": "^7.0.13",
+    "@storybook/addon-actions": "^7.3.0",
     "@storybook/addon-essentials": "^7.0.13",
     "@storybook/addon-interactions": "^7.0.13",
     "@storybook/addon-links": "^7.0.13",
